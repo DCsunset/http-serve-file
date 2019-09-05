@@ -1,0 +1,24 @@
+{
+  "name": "http-serve-file",
+  "version": "0.1.0",
+  "description": "Serve static files via http(s)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "static",
+    "serve",
+    "server",
+    "http",
+    "https"
+  ],
+  "author": "DCsunset",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.8.1",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "yargs": "^14.0.0"
+  }
+}

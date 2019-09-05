@@ -51,15 +51,15 @@ require('yargs')
         type: 'boolean'
     })
     .option('cert', {
-        describle: 'Path to tls cert file',
+        describe: 'Path to tls cert file',
+        alias: 'c',
         default: 'cert.pem'
     })
-    .alias('c', 'cert')
     .option('key', {
-        describle: 'Path to tls key file',
+        describe: 'Path to tls key file',
+        alias: 'k',
         default: 'key.pem'
     })
-    .alias('k', 'key')
     .help('h')
     .alias('h', 'help')
     .argv;

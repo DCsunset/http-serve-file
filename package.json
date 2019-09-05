@@ -6,15 +6,23 @@
   "scripts": {
     "start": "node server.js"
   },
+  "bin": {
+    "serve-file": "./server.js"
+  },
   "keywords": [
     "static",
     "serve",
     "server",
+    "file",
     "http",
     "https"
   ],
   "author": "DCsunset",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DCsunset/http-serve-file"
+  },
   "dependencies": {
     "koa": "^2.8.1",
     "koa-router": "^7.4.0",

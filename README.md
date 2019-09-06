@@ -1,5 +1,8 @@
 # http-serve-file
 
+[![npm](https://img.shields.io/npm/v/http-serve-file)](https://www.npmjs.com/package/http-serve-file)
+[![GitHub](https://img.shields.io/github/license/DCsunset/http-serve-file?color=blue)](https://github.com/DCsunset/http-serve-file)
+
 Conveniently serve single file or specific files in a directory, based on Koa.js.
 
 ## Install

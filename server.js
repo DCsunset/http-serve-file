@@ -6,6 +6,8 @@ const Koa = require('koa');
 const send = require('koa-send');
 const Router = require('koa-router');
 const fs = require('fs');
+const crypto = require('crypto');
+const path = require('path');
 
 const app = new Koa();
 const router = new Router();
@@ -15,9 +17,18 @@ require('yargs')
         const files = argv._.concat([argv['file(s)']]);
         const protocol = argv.tls ? 'https' : 'http';
         for (const file of files) {
-            router.get(`/${file}`, async ctx => {
-                await send(ctx, file, { hidden: true });
+            const sha256 = crypto.createHash('sha256');
+            const route = sha256.update(file).digest('hex').substring(0, 8);
+            const filename = file.substring(file.lastIndexOf('/') + 1);
+            console.log(file, path.resolve(__dirname, file));
+            router.get(`/${route}/${filename}`, async ctx => {
+                await send(ctx, path.resolve(file), {
+                    root: '/', // Serve all files
+                    hidden: true
+                });
             });
+            console.log(`Serving ${file} at:`);
+            console.log(`\t${protocol}://${argv.addr}:${argv.port}/${route}/${filename}\n`);
         }
         app.use(router.routes());
         app.use(router.allowedMethods());
@@ -30,12 +41,6 @@ require('yargs')
                 key: fs.readFileSync(argv.key),
                 cert: fs.readFileSync(argv.cert)
             }, app.callback()).listen(argv.port, argv.addr);
-        }
-
-        // Log
-        for (const file of files) {
-            console.log(`Serving ${file}`);
-            console.log(`Serving at ${protocol}://${argv.addr}:${argv.port}/${file}\n`);
         }
     })
     .option('addr', {

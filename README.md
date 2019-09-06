@@ -1,6 +1,6 @@
 # http-serve-file
 
-Serve static files via http or https, based on Koa.js.
+Conveniently serve single file or specific files in a directory, based on Koa.js.
 
 ## Install
 
@@ -8,12 +8,23 @@ Serve static files via http or https, based on Koa.js.
 npm install http-serve-file
 ```
 
+## Features
+
+* Use sha256 of the file path as route to prevent conflicts.
+
+## TODO
+
+* [ ] Colored output
+* [ ] Print all ip addresses
+* [ ] Bind multiple addresses
+* [ ] Print detailed logs
+
 ## Usage
 
-To serve static file(s) via http or https. (Double dots in file names are invalid)
+To serve static file(s) via http or https.
 
 ```
-serve-file <file(s)> [options]
+http-serve-file <file(s)> [options]
 ```
 
 Options:

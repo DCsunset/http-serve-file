@@ -1,13 +1,13 @@
 {
   "name": "http-serve-file",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Serve static files via http(s)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "bin": {
-    "serve-file": "./server.js"
+    "http-serve-file": "./server.js"
   },
   "keywords": [
     "static",

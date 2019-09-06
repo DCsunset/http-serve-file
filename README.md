@@ -32,12 +32,13 @@ http-serve-file <file(s)> [options]
 Options:
 
 * `--version`: Show version number [boolean]
-* `--addr, -a`: Address to bind [default: "0.0.0.0"]
+* `--addr, -a`: Address to bind [default: "::"]
 * `--port, -p`: Port to listen to [default: "8000"]
 * `--tls`: Enable https [boolean]
 * `-h, --help`: Show help [boolean]
 * `-c, --cert`: Path to tls cert file [default: "cert.pem"]
 * `-k, --key`: Path to tls key file [default: "key.pem"]
+* `--local, -l`: Display local addresses [boolean]
 * `-h, --help`: Show help [boolean]
 
 ## License

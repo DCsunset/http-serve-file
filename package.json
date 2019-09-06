@@ -1,6 +1,6 @@
 {
   "name": "http-serve-file",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Serve static files via http(s)",
   "main": "server.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "url": "git+https://github.com/DCsunset/http-serve-file"
   },
   "dependencies": {
+    "ipaddr.js": "^1.9.1",
     "koa": "^2.8.1",
     "koa-router": "^7.4.0",
     "koa-send": "^5.0.0",

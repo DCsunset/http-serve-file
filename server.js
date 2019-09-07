@@ -10,9 +10,13 @@ const crypto = require('crypto');
 const path = require('path');
 const os = require('os');
 const ipaddr = require('ipaddr.js');
+const morgan = require('koa-morgan');
 
 const app = new Koa();
 const router = new Router();
+
+// Logger
+app.use(morgan('combined'));
 
 /**
  * Get ip addresses.

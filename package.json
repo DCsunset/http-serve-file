@@ -1,6 +1,6 @@
 {
   "name": "http-serve-file",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Serve static files via http(s)",
   "main": "server.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "ipaddr.js": "^1.9.1",
     "koa": "^2.8.1",
+    "koa-morgan": "^1.0.1",
     "koa-router": "^7.4.0",
     "koa-send": "^5.0.0",
     "yargs": "^14.0.0"

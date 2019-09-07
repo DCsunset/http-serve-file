@@ -15,11 +15,7 @@ npm install http-serve-file
 
 * Use SHA256 of the file path as route to prevent conflicts.
 * Print ip addresses available to simpify uri sharing.
-
-## TODO
-
-* [ ] Colored output
-* [ ] Print detailed logs
+* Detailed logs
 
 ## Usage
 

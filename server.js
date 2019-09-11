@@ -15,10 +15,12 @@ const morgan = require('koa-morgan');
 const app = new Koa();
 const router = new Router();
 
-// Logger
+// Immediate logger
 app.use(morgan('combined', {
 	immediate: true
 }));
+// Not immediate logger
+app.use(morgan('combined'));
 
 /**
  * Get ip addresses.

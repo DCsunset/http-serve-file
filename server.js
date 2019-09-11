@@ -16,7 +16,9 @@ const app = new Koa();
 const router = new Router();
 
 // Logger
-app.use(morgan('combined'));
+app.use(morgan('combined', {
+	immediate: true
+}));
 
 /**
  * Get ip addresses.

@@ -1,8 +1,12 @@
 {
   "name": "http-serve-file",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Serve static files via http(s)",
   "main": "server.js",
+  "files": [
+	  "*.json",
+	  "*.js"
+  ],
   "scripts": {
     "start": "node server.js"
   },

@@ -57,7 +57,7 @@ require('yargs')
             const sha256 = crypto.createHash('sha256');
             const route = sha256.update(file).digest('hex').substring(0, 8);
             const filename = file.substring(file.lastIndexOf('/') + 1);
-            const encodedFilename = encodeURIComponent(filename);
+            const encodedFilename = encodeURIComponent(escape(filename));
 
             router.get(`/${route}/${encodedFilename}`, async ctx => {
                 await send(ctx, path.resolve(file), {

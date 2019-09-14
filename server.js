@@ -57,16 +57,19 @@ require('yargs')
             const sha256 = crypto.createHash('sha256');
             const route = sha256.update(file).digest('hex').substring(0, 8);
             const filename = file.substring(file.lastIndexOf('/') + 1);
-            router.get(`/${route}/${filename}`, async ctx => {
+            const encodedFilename = encodeURIComponent(filename);
+
+            router.get(`/${route}/${encodedFilename}`, async ctx => {
                 await send(ctx, path.resolve(file), {
                     root: '/', // Serve all files
                     hidden: true
                 });
             });
+
             console.log(`Serving ${file} at:`);
             for (const ip of ipAddresses) {
                 const host = ip.family === 'IPv6' ? `[${ip.address}]` : ip.address;
-                console.log(`\t${protocol}://${host}:${argv.port}/${route}/${filename}`);
+                console.log(`\t${protocol}://${host}:${argv.port}/${route}/${encodedFilename}`);
             }
             console.log();
         }

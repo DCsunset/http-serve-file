@@ -45,7 +45,7 @@ function getIpAddresses(ipv6, local) {
 
 require('yargs')
     .command('$0 <file(s)> [options]', 'Serve static file(s) via http or https. (Double dots in file names are invalid)', () => {}, argv => {
-        const files = argv._.concat([argv['file(s)']]);
+        const files = argv._.concat([argv['file(s)'], argv.options]);
         const protocol = argv.tls ? 'https' : 'http';
 
         const addr = ipaddr.parse(argv.addr)

@@ -51,7 +51,7 @@ require('yargs')
         const addr = ipaddr.parse(argv.addr)
 
         const ipAddresses = addr.toString() === '::' ? getIpAddresses(true, argv.local) :
-            addr.toString() === '0.0.0.0' ? getIpAddresses(false, argv.local) : [argv.addr];
+            addr.toString() === '0.0.0.0' ? getIpAddresses(false, argv.local) : [{ address: argv.addr }];
 
         for (const file of files) {
             const sha256 = crypto.createHash('sha256');
